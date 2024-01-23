@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Carré magique &#8212; 1 NSI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a6621bbe" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/translations.js?v=d99ca74e"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/tp_carre_magique';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Créer des listes par compréhension" href="tp_tableau_par_comprehension.html" />
+    <link rel="prev" title="Exercices" href="exercice.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Haut de page
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">1 NSI</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tetris.html">Données structurées : tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cours.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercice.html">Exercices</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Carré magique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tp_tableau_par_comprehension.html">Créer des listes par compréhension</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/tp_carre_magique.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Carré magique</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-mathematique">Présentation mathématique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#des-carres-de-nombres-en-python">Des carrés de nombres en Python</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="toctree-wrapper compound">
+</div>
+<section id="carre-magique">
+<h1>Carré magique<a class="headerlink" href="#carre-magique" title="Link to this heading">#</a></h1>
+<section id="presentation-mathematique">
+<h2>Présentation mathématique<a class="headerlink" href="#presentation-mathematique" title="Link to this heading">#</a></h2>
+<p>Un carré d’ordre <span class="math notranslate nohighlight">\(n\)</span> est un tableau carré contenant <span class="math notranslate nohighlight">\(n^2\)</span> nombres entiers strictement positifs.</p>
+<p>On dit qu’un carré d’ordre <span class="math notranslate nohighlight">\(n\)</span> est <strong>magique</strong> si:</p>
+<ul class="simple">
+<li><p>il contient tous les nombres entiers de <span class="math notranslate nohighlight">\(1\)</span> à <span class="math notranslate nohighlight">\(n^2\)</span>;</p></li>
+<li><p>les sommes des nombres de chaque ligne, les sommes des nombres de chaque colonne et les sommes des nombres des 2
+diagonales sont égales.</p></li>
+</ul>
+<div class="admonition-exemple admonition" id="exemple">
+<p class="admonition-title">Exemple</p>
+<p>Voici un carré magique d’ordre 3</p>
+<a class="mg-b reference internal image-reference" href="../_images/ex4.png"><img alt="ex4.png" class="mg-b align-center" src="../_images/ex4.png" style="width: 200px;" /></a>
+<p>On donne un second carré de nombres d’ordre 4:</p>
+<a class="reference internal image-reference" href="../_images/carre_2.png"><img alt="carre_2.png" class="align-center" src="../_images/carre_2.png" style="width: 160px;" /></a>
+</div>
+<p>Le carré de nombres d’ordre 4 est-il un carré magique ? Justifier.</p>
+</section>
+<section id="des-carres-de-nombres-en-python">
+<h2>Des carrés de nombres en Python<a class="headerlink" href="#des-carres-de-nombres-en-python" title="Link to this heading">#</a></h2>
+<p>On modélise, en python, un carré par une liste contenant les listes des nombres de chaque ligne.</p>
+<p>En python, le carré magique d’ordre 3 est représenté par une liste de 3 listes de longueur 3 chacune.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">carre1</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>Représenter le carré d’ordre 4 en python stocké dans la variable <code class="docutils literal notranslate"><span class="pre">carre2</span></code>.</p></li>
+<li><ol class="loweralpha simple">
+<li><p>Quelle est la valeur de <code class="docutils literal notranslate"><span class="pre">len(carre2)</span></code> ?</p></li>
+<li><p>Quelle est la valeur de <code class="docutils literal notranslate"><span class="pre">carre2[1]</span></code> ?</p></li>
+<li><p>Quelle est la valeur de <code class="docutils literal notranslate"><span class="pre">carre2[0][2]</span></code> ?</p></li>
+<li><p>Quelle instruction permet de récupérer la valeur 10 du carré 2 ?</p></li>
+</ol>
+</li>
+<li><p>On donne le code de la fonction <strong>calcul_ligne</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcul_ligne</span><span class="p">(</span><span class="n">carre</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">somme</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">carre</span><span class="p">[</span><span class="n">n</span><span class="p">]:</span>
+        <span class="n">somme</span><span class="o">=</span><span class="n">somme</span><span class="o">+</span><span class="n">nombre</span>
+    <span class="k">return</span> <span class="n">somme</span>
+</pre></div>
+</div>
+<ol class="loweralpha simple">
+<li><p>Quelle valeur renvoie l’appel de la fonction <code class="docutils literal notranslate"><span class="pre">calcul_ligne(carre1,2)</span></code> ?</p></li>
+<li><p>Quels calculs peut-on effectuer sur un carré de nombres avec la fonction calcul_ligne ? Comment ?</p></li>
+</ol>
+</li>
+<li><p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">calcul_colonne</span></code> qui prend en paramètre un carré de nombres et le numéro d’une colonne du carré
+de nombres. La fonction <code class="docutils literal notranslate"><span class="pre">calcul_colonne</span></code> renvoie la somme des nombres de cette colonne.</p>
+<p>Par exemple, l’appel <code class="docutils literal notranslate"><span class="pre">calcul_colonne(carre1,0)</span></code> renvoie la valeur 15.</p>
+</li>
+<li><p>On donne le code de la fonction <strong>calcul_diagonale</strong> qui prend en paramètre un carré de nombres. Cette fonction
+calcule la somme des nombres d’une diagonale.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcul_mystere</span><span class="p">(</span><span class="n">carre</span><span class="p">):</span>
+    <span class="n">somme</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">carre</span><span class="p">)):</span>
+        <span class="n">somme</span><span class="o">=</span><span class="n">somme</span><span class="o">+</span><span class="n">carre</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">somme</span>
+</pre></div>
+</div>
+<p>Quel calcul effectue l’appel <code class="docutils literal notranslate"><span class="pre">calcul_mystere(carre2)</span></code> ?</p>
+</li>
+<li><p>Pour calculer la somme des nombres de l’autre diagonale, on écrit la fonction <code class="docutils literal notranslate"><span class="pre">calcul_diagonale_2</span></code> qui prend en
+paramètre le carré de nombres et renvoie la somme des nombres positionnés sur la seconde diagonale du carré.</p>
+<p>Écrire cette fonction en python.</p>
+</li>
+<li><p>On donne le code de la fonction <code class="docutils literal notranslate"><span class="pre">intrus</span></code> qui a pour paramètre <code class="docutils literal notranslate"><span class="pre">liste</span></code> de type liste.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">intrus</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+    <span class="n">valeur</span><span class="o">=</span><span class="n">liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">nombre</span><span class="o">!=</span><span class="n">valeur</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<ol class="loweralpha simple">
+<li><p>Quelle valeur est renvoyée par l’appel <code class="docutils literal notranslate"><span class="pre">intrus([7,7,5,7])</span></code> ?</p></li>
+<li><p>Quelle valeur est renvoyée par l’appel <code class="docutils literal notranslate"><span class="pre">intrus([15,15,15,15,15,15,15,15])</span></code> ?</p></li>
+</ol>
+</li>
+<li><p>La fonction <code class="docutils literal notranslate"><span class="pre">est_magique</span></code> prend en paramètre un carré de nombres et renvoie <code class="docutils literal notranslate"><span class="pre">True</span></code> si le carré est magique,
+<code class="docutils literal notranslate"><span class="pre">False</span></code> sinon.</p>
+<p>L’algorithme proposé ci-dessous consiste à placer dans une même liste les sommes de toutes les lignes, les sommes de
+toutes les colonnes et les sommes de chaque diagonale.</p>
+<p>Lorsque cette liste est complète, on vérifie qu’elle contient la même valeur de somme.</p>
+<p>On donne cette fonction en pseudo-code :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">est_magique</span><span class="p">(</span><span class="n">carré</span><span class="p">):</span>
+    <span class="n">créer</span> <span class="n">une</span> <span class="n">liste</span> <span class="n">vide</span> <span class="n">S</span>
+    <span class="n">ajouter</span> <span class="n">dans</span> <span class="n">S</span> <span class="n">la</span> <span class="n">somme</span> <span class="n">des</span> <span class="n">nombres</span> <span class="n">en</span> <span class="n">ligne</span> <span class="n">de</span> <span class="n">carré</span>
+    <span class="n">ajouter</span> <span class="n">dans</span> <span class="n">S</span> <span class="n">la</span> <span class="n">somme</span> <span class="n">des</span> <span class="n">nombres</span> <span class="n">en</span> <span class="n">colonne</span> <span class="n">de</span> <span class="n">carré</span>
+    <span class="n">ajouter</span> <span class="n">dans</span> <span class="n">S</span> <span class="n">la</span> <span class="n">somme</span> <span class="n">de</span> <span class="n">la</span> <span class="n">première</span> <span class="n">diagonale</span> <span class="n">de</span> <span class="n">carré</span>
+    <span class="n">ajouter</span> <span class="n">dans</span> <span class="n">S</span> <span class="n">la</span> <span class="n">somme</span> <span class="n">de</span> <span class="n">la</span> <span class="n">deuxième</span> <span class="n">diagonale</span> <span class="n">de</span> <span class="n">carré</span>
+    <span class="n">Si</span> <span class="n">les</span> <span class="n">tous</span> <span class="n">les</span> <span class="n">nombres</span> <span class="n">de</span> <span class="n">S</span> <span class="n">sont</span> <span class="n">égaux</span><span class="p">:</span>
+        <span class="n">renvoyer</span> <span class="s2">&quot;le carré est magique&quot;</span>
+    <span class="n">sinon</span><span class="p">:</span>
+        <span class="n">renvoyer</span> <span class="s2">&quot;le carré n&#39;est pas magique&quot;</span>
+</pre></div>
+</div>
+<p>Écrire le code de la fonction <code class="docutils literal notranslate"><span class="pre">est_magique</span></code> en Python.</p>
+</li>
+<li><p>Utiliser votre programme pour vérifier si le carré d’ordre 4 est magique.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="exercice.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Exercices</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tp_tableau_par_comprehension.html"
+       title="page suivante">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Créer des listes par compréhension</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-mathematique">Présentation mathématique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#des-carres-de-nombres-en-python">Des carrés de nombres en Python</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Yannick Chistel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022, Yannick Chistel.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

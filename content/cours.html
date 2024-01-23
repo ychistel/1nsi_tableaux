@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Les tableaux &#8212; 1 NSI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a6621bbe" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/translations.js?v=d99ca74e"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/cours';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Exercices" href="exercice.html" />
+    <link rel="prev" title="Données structurées : tableaux" href="tetris.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Haut de page
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">1 NSI</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tetris.html">Données structurées : tableaux</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercice.html">Exercices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tp_carre_magique.html">Carré magique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tp_tableau_par_comprehension.html">Créer des listes par compréhension</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/cours.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Les tableaux</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-tableaux-en-python">Les tableaux en Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipuler-les-elements-d-une-liste">Manipuler les éléments d’une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tableau-de-tableaux">Tableau de tableaux</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="les-tableaux">
+<h1>Les tableaux<a class="headerlink" href="#les-tableaux" title="Link to this heading">#</a></h1>
+<p>En programmation, un <strong>tableau</strong> est un type de données qui permet d’écrire plusieurs valeurs dans une même variable.</p>
+<p>On définit le type tableau de la façon suivante:</p>
+<ul class="simple">
+<li><p>Le tableau est de <strong>dimension fixe</strong>. Cela signifie qu’il accepte un nombre fixe de valeurs;</p></li>
+<li><p>Les données d’un tableau sont du même type : des nombres ou des chaines de caractères ou etc;</p></li>
+<li><p>Le type tableau autorise la modification de ses valeurs;</p></li>
+<li><p>Le type tableau ne permet pas l’ajout de valeurs ou la suppression de valeurs.</p></li>
+</ul>
+<section id="les-tableaux-en-python">
+<h2>Les tableaux en Python<a class="headerlink" href="#les-tableaux-en-python" title="Link to this heading">#</a></h2>
+<p>En python, la structure de données <strong>tableau</strong> n’existe pas. On construit des tableaux avec la structure de données <code class="docutils literal notranslate"><span class="pre">list</span></code> ou <code class="docutils literal notranslate"><span class="pre">tuple</span></code>.</p>
+<p class="rubric">Le type liste</p>
+<p>Un tableau construit avec une <strong>liste</strong> est un <strong>tableau dynamique</strong>. Cela modifie le comportement d’un tableau :</p>
+<ul class="simple">
+<li><p>La dimension d’une liste est variable, elle s’adapte au nombre de valeurs à écrire;</p></li>
+<li><p>Les données peuvent avoir des types différents (nombres entiers et chaines de caractères dans une même liste)</p></li>
+<li><p>On peut ajouter, modifier, ou supprimer des valeurs ce qui change la dimension de la liste.</p></li>
+</ul>
+<p>Une liste se note entre <strong>crochets</strong> et contient les valeurs séparées par des virgules.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># jours de la semaine dans une liste</span>
+<span class="n">jours</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p class="rubric">Le type tuple</p>
+<p>Un tableau construit avec un <strong>tuple</strong> est un tableau <strong>non mutable</strong> ou <strong>immuable</strong>.</p>
+<p>Cela siginie que sa dimension est fixe, qu’on ne peut pas modifier ses valeurs, ni en supprimer, ni en ajouter.</p>
+<p>Un <strong>tuple</strong> se note entre <strong>parenthèses</strong> et contient les valeurs séparées par des virgules.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># jours de la semaine dans un tuple</span>
+<span class="n">jours</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Dimension d’une liste ou d’un tuple</p>
+<p>La dimension d’un tableau créé avec une liste ou un tuple est donné avec la fonction <code class="docutils literal notranslate"><span class="pre">len</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># jours de la semaine dans un tuple</span>
+<span class="n">jours</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">)</span>
+<span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">jours</span><span class="p">)</span>
+<span class="mi">7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">notes</span><span class="p">)</span>
+<span class="mi">4</span>
+</pre></div>
+</div>
+<p class="rubric">Accéder à une valeur du tableau</p>
+<p>Pour accéder à un élément du tableau (tuple ou liste), on utilise son indice (index en anglais) placé entre crochets juste après le nom de la variable.</p>
+<ul class="simple">
+<li><p>Le premier élément d’un tableau est d’indice 0;</p></li>
+<li><p>Le deuxième élément d’un tableau a pour indice 1;</p></li>
+<li><p>Le dernier élément d’un tableau a pour indice la dimension du tableau - 1;</p></li>
+<li><p>On peut aussi accéder au dernier élément ave l’indice -1.</p></li>
+</ul>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<p>On reprend le tuple sur les jours de la semaine:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># jours de la semaine dans un tuple</span>
+<span class="n">jours</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">jours</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="s2">&quot;lundi&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">jours</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="s2">&quot;mardi&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">jours</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="s2">&quot;dimanche&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">jours</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="s2">&quot;dimanche&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">jours</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="s2">&quot;samedi&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="manipuler-les-elements-d-une-liste">
+<h2>Manipuler les éléments d’une liste<a class="headerlink" href="#manipuler-les-elements-d-une-liste" title="Link to this heading">#</a></h2>
+<p class="rubric">Un type itérable</p>
+<p>On peut parcourir les éléments d’une liste et donc récupérer ses valeurs en <strong>itérant</strong> cette liste avec une boucle.</p>
+<ol class="arabic">
+<li><p>Avec une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> qui utilise les indices de chaque élément de la liste:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># On définit une liste jours</span>
+<span class="n">jours</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">]</span>
+
+<span class="c1"># boucle for qui itère sur les 7 indices, de 0 à 6, soit un range(7)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">jours</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p>Avec une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> et le mot clé <code class="docutils literal notranslate"><span class="pre">in</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># On définit une liste jours</span>
+<span class="n">jours</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">]</span>
+
+<span class="c1"># boucle for qui itère sur sur chaque élément de la liste</span>
+<span class="k">for</span> <span class="n">jour</span> <span class="ow">in</span> <span class="n">jours</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">jour</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p class="rubric">Modifier une valeur de la liste</p>
+<p>La modification d’une valeur d’une liste est possible. Pour cela, on procède à une nouvelle affectation sur l’élément
+de la liste en précisant son indice et la nouvelle valeur.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># on définit la variable jours de type liste:</span>
+<span class="n">jours</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jedi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">]</span>
+
+<span class="c1"># zut il manque un &quot;u&quot; à jeudi qui a pour indice 3 ! On modifie :</span>
+<span class="n">jours</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;jeudi&quot;</span>
+</pre></div>
+</div>
+<p class="rubric">Ajouter une valeur à une liste</p>
+<p>Si les tuples sont des tableaux non modifiables, les listes sont des tableaux que l’on peut agrandir en ajoutant des éléments.</p>
+<p>Plusieurs méthodes sont possibles :</p>
+<ul class="simple">
+<li><p>Par concaténation de deux listes existantes avec l’opérateur + ;</p></li>
+<li><p>En utilisant la méthode <strong>append</strong> qui permet d’ajouter une valeur en fin de liste.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Soit 2 tableaux de nombres</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">u</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Concaténation des tableaux</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">+</span> <span class="n">u</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Avec la méthode **append** :</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p class="rubric">Supprimer une valeur dans la liste</p>
+<p>La suppression d’une valeur d’un tableau, en Python, ne se fait que sur les listes. La fonction <code class="docutils literal notranslate"><span class="pre">del</span></code> et les
+méthodes <code class="docutils literal notranslate"><span class="pre">remove</span></code> et <code class="docutils literal notranslate"><span class="pre">pop</span></code> permettent de supprimer un élément du tableau. Elles s’utilisent très différemment:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># liste de mots</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mots</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;na&quot;</span><span class="p">,</span><span class="s2">&quot;ne&quot;</span><span class="p">,</span><span class="s2">&quot;ni&quot;</span><span class="p">,</span><span class="s2">&quot;no&quot;</span><span class="p">,</span><span class="s2">&quot;nu&quot;</span><span class="p">]</span>
+
+<span class="c1"># on supprime le dernier élément et on récupère sa valeur</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mots</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="s1">&#39;nu&#39;</span> <span class="c1">#  --&gt;  la liste mots = [&quot;na&quot;,&quot;ne&quot;,&quot;ni&quot;,&quot;no&quot;]</span>
+
+<span class="c1"># on supprime le second élément et on récupère sa valeur</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">mots</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="s1">&#39;ne&#39;</span> <span class="c1">#  --&gt; la liste mots = [&quot;na&quot;,&quot;ni&quot;,&quot;no&quot;]</span>
+
+<span class="c1"># on supprime le premier élément avec del</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">mots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#  --&gt; la liste mots = [&quot;ni&quot;,&quot;no&quot;]</span>
+
+<span class="c1"># on supprime le mot &quot;no&quot;</span>
+<span class="n">mots</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;no&quot;</span><span class="p">)</span> <span class="c1"># --&gt; la liste mots = [&quot;ni&quot;]</span>
+</pre></div>
+</div>
+</section>
+<section id="tableau-de-tableaux">
+<h2>Tableau de tableaux<a class="headerlink" href="#tableau-de-tableaux" title="Link to this heading">#</a></h2>
+<p>Un tableau peut contenir des tableaux ! On parle alors de tableaux à 2 dimensions.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<p>Une grille de jeu peut se représenter par un tableau à 2 dimensions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grille</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>    <span class="c1"># première ligne</span>
+   <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>    <span class="c1"># seconde ligne</span>
+   <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>     <span class="c1"># troisième ligne</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Pour accéder à une valeur de ce tableau, on utilise un premier indice pour sélectionner le tableau où se trouve la
+valeur puis un second indice pour obtenir la valeur dans le tableau sélectionné. Les indices sont notés entre crochets.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<p>Soit un tableau T contenant les tableaux [4,5],[6,7] et [8,9].</p>
+<p>En python, avec les listes, on a <code class="docutils literal notranslate"><span class="pre">T=[[4,5],[6,7],[8,9]]</span></code>. On peut remarquer:</p>
+<ul class="simple">
+<li><p>que le tableau T contient 3 tableaux de dimension 2 ; T est un tableau de longueur 3;</p></li>
+<li><p>que le tableau [4,5] a pour indice 0, le tableau [6,7] a pour indice 1 et le tableau [8,9] a pour indice 2 ;</p></li>
+<li><p>que les valeurs ont pour indice 0 et 1 pour chacun des trois tableaux de longueur 2.</p></li>
+</ul>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Liste contenant 3 listes</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">T</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="mi">3</span> <span class="c1"># --&gt; renvoie la valeur 3 car T contient 3 listes</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="mi">4</span> <span class="c1"># --&gt; renvoie 4 car la première liste a pour longueur 4  T[0]=[1,2,3,4]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">T</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="c1"># renvoie la liste [8,9] qui est le dernier élément du tableau T</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="mi">3</span> <span class="c1"># renvoie le nombre 3 car T[0] est la liste [1,2,3,4] et que l&#39;élément d&#39;indice 2 est 3.</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tetris.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Données structurées : tableaux</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exercice.html"
+       title="page suivante">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Exercices</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-tableaux-en-python">Les tableaux en Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipuler-les-elements-d-une-liste">Manipuler les éléments d’une liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tableau-de-tableaux">Tableau de tableaux</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Yannick Chistel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022, Yannick Chistel.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
