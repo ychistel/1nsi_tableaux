@@ -43,8 +43,6 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script src="../_static/translations.js?v=d99ca74e"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/exercice';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
@@ -307,9 +305,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">Exercice 3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-4">Exercice 4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-5">Exercice 5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-6">Exercice 6</a></li>
 </ul>
             </nav>
         </div>
@@ -325,113 +320,16 @@ document.write(`
 <h1>Exercices<a class="headerlink" href="#exercices" title="Link to this heading">#</a></h1>
 <section id="exercice-1">
 <h2>Exercice 1<a class="headerlink" href="#exercice-1" title="Link to this heading">#</a></h2>
-<p>On considère la liste de nombres suivante: <code class="docutils literal notranslate"><span class="pre">L=[1,2,0,4,5]</span></code>.</p>
+<p>On considère le tableau <code class="docutils literal notranslate"><span class="pre">T=[[1,2],[4,5],[7,8]]</span></code>.</p>
 <ol class="arabic simple">
-<li><p>Écrire une instruction python qui remplace la valeur 0 de la liste L par la valeur 3.</p></li>
-<li><p>Écrire un script python qui ajoute le nombre 10 à toutes les valeurs de la liste L.</p></li>
-<li><p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">augmente</span></code> qui prend en paramètre un tableau <code class="docutils literal notranslate"><span class="pre">t</span></code> de nombres et un nombre entier <code class="docutils literal notranslate"><span class="pre">x</span></code>. Cette fonction renvoie le tableau <code class="docutils literal notranslate"><span class="pre">t</span></code> après avoir ajouté le nombre <code class="docutils literal notranslate"><span class="pre">x</span></code> à toutes les valeurs du tableau <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p></li>
+<li><p>Quelle est la dimension du tableau T ?</p></li>
+<li><p>Écrire un code python qui remplace la valeur 4 du tableau <code class="docutils literal notranslate"><span class="pre">T</span></code> par la valeur 6.</p></li>
+<li><p>Écrire un code python qui remplace la valeur 2 du tableau <code class="docutils literal notranslate"><span class="pre">T</span></code> par la valeur 4.</p></li>
+<li><p>Écrire un script python qui ajoute le nombre 1 à toutes les valeurs du tableau T.</p></li>
 </ol>
 </section>
 <section id="exercice-2">
 <h2>Exercice 2<a class="headerlink" href="#exercice-2" title="Link to this heading">#</a></h2>
-<p>Soit L1 et L2 deux tuples tels que : <code class="docutils literal notranslate"><span class="pre">L1</span> <span class="pre">=</span> <span class="pre">(1,3,5,7,9)</span></code> et <code class="docutils literal notranslate"><span class="pre">L2</span> <span class="pre">=</span> <span class="pre">(2,4,6,8)</span></code>.</p>
-<ol class="arabic simple">
-<li><p>Est-il possible d’ajouter les valeurs de L2 à la fin de L1 ? Justifier.</p></li>
-<li><p>La fonction <code class="docutils literal notranslate"><span class="pre">list(tuple)</span></code> transforme un tuple en liste.
-Transformer les tuples L1 et L2 en listes.</p></li>
-<li><p>Écrire un script python qui rassemble dans une même liste L3 les éléments de L1, en début de liste, puis les éléments
-de  L2 en fin de liste L. On doit obtenir <code class="docutils literal notranslate"><span class="pre">L3</span> <span class="pre">=</span> <span class="pre">[1,3,5,7,9,2,4,6,8]</span></code>.</p></li>
-<li><p>Écrire un script python qui rassemble dans une même liste L4 les éléments de L1 avec les éléments de L2 rangés dans l’ordre
-croissant. On doit obtenir <code class="docutils literal notranslate"><span class="pre">L4</span> <span class="pre">=</span> <span class="pre">[1,2,3,4,5,6,7,8,9]</span></code>.</p></li>
-</ol>
-</section>
-<section id="exercice-3">
-<h2>Exercice 3<a class="headerlink" href="#exercice-3" title="Link to this heading">#</a></h2>
-<p>La suite de <strong>Fibonacci</strong> est une suite dont chaque valeur s’obtient en ajoutant les deux valeurs qui la précèdent,
-avec les nombres <span class="math notranslate nohighlight">\(0\)</span> et <span class="math notranslate nohighlight">\(1\)</span> comme valeurs initiales.</p>
-<p>Soit <strong>fib</strong> le tableau contenant les premiers nombres de la suite de Fibonacci: <code class="docutils literal notranslate"><span class="pre">fib=[0,1,1,2,3,5,8,13]</span></code></p>
-<ol class="arabic">
-<li><p>On saisit l’instruction <code class="docutils literal notranslate"><span class="pre">len(t)</span></code>. Quelle est la valeur renvoyée ?</p></li>
-<li><p>Comment peut-on afficher la dernière valeur du tableau ? Proposer plusieurs façons d’y parvenir.</p></li>
-<li><p>Quelle sont les valeurs <code class="docutils literal notranslate"><span class="pre">fib[4]</span></code> et <code class="docutils literal notranslate"><span class="pre">fib[8]</span></code> ? Justifier.</p></li>
-<li><p>Ajouter à la fin du tableau <code class="docutils literal notranslate"><span class="pre">fib</span></code> une nouvelle valeur de la suite de Fibonacci.</p></li>
-<li><p>On souhaite compléter le tableau des nombres de la suite de Fibonacci.</p>
-<p>La fonction <code class="docutils literal notranslate"><span class="pre">suivant</span></code> prend en paramètre le
-tableau des nombres de la suite de Fibonacci et ajoute le terme suivant en fin de tableau. La fonction renvoie le
-tableau avec le nouveau terme ajouté.</p>
-<ol class="loweralpha simple">
-<li><p>Ecrire le code de la fonction <code class="docutils literal notranslate"><span class="pre">suivant</span></code>.</p></li>
-<li><p>Vérifier votre fonction en ajoutant plusieurs termes à la suite de Fibonacci.</p></li>
-</ol>
-</li>
-</ol>
-</section>
-<section id="exercice-4">
-<h2>Exercice 4<a class="headerlink" href="#exercice-4" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>Créer, en Python, un tableau <code class="docutils literal notranslate"><span class="pre">panier</span></code> contenant les fruits : pomme, poire, prune et orange. Chaque fruit est une
-chaine de caractères.</p></li>
-<li><p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">est_present</span></code> qui prend en paramètre le tableau de fruits et un fruit. La fonction renvoie un
-booléen <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code> qui affirme si le fruit est dans le panier ou non.</p>
-<p class="rubric">Par exemple:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">est_present</span><span class="p">(</span><span class="n">panier</span><span class="p">,</span><span class="s1">&#39;pomme&#39;</span><span class="p">)</span>
-<span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">est_present</span><span class="p">(</span><span class="n">panier</span><span class="p">,</span><span class="s1">&#39;kiwi&#39;</span><span class="p">)</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-</li>
-<li><p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">ajoute</span></code> qui prend en paramètre le tableau de fruits et un fruit pour l’ajouter au tableau de
-fruits si celui-ci n’y est pas encore.</p>
-<p class="rubric">Par exemple:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ajoute</span><span class="p">(</span><span class="n">panier</span><span class="p">,</span><span class="s1">&#39;kiwi&#39;</span><span class="p">)</span>
-<span class="go">[&#39;pomme&#39;,&#39;poire&#39;,&#39;prune&#39;,&#39;orange&#39;,&#39;kiwi&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ajoute</span><span class="p">(</span><span class="n">panier</span><span class="p">,</span><span class="s1">&#39;poire&#39;</span><span class="p">)</span>
-<span class="go">[&#39;pomme&#39;,&#39;poire&#39;,&#39;prune&#39;,&#39;orange&#39;,&#39;kiwi&#39;]</span>
-</pre></div>
-</div>
-</li>
-<li><p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">supprime</span></code> qui prend en paramètre le tableau de fruits et un fruit pour le supprimer du tableau.</p>
-<p>La méthode <code class="docutils literal notranslate"><span class="pre">remove(valeur)</span></code> supprime dans un tableau la première occurence <code class="docutils literal notranslate"><span class="pre">valeur</span></code>.</p>
-<p class="rubric">Par exemple:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">supprime</span><span class="p">(</span><span class="n">panier</span><span class="p">,</span><span class="s1">&#39;kiwi&#39;</span><span class="p">)</span>
-<span class="go">[&#39;pomme&#39;,&#39;poire&#39;,&#39;prune&#39;,&#39;orange&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">supprime</span><span class="p">(</span><span class="n">panier</span><span class="p">,</span><span class="s1">&#39;poire&#39;</span><span class="p">)</span>
-<span class="go">[&#39;pomme&#39;,&#39;prune&#39;,&#39;orange&#39;]</span>
-</pre></div>
-</div>
-</li>
-</ol>
-</section>
-<section id="exercice-5">
-<span id="id1"></span><h2>Exercice 5<a class="headerlink" href="#exercice-5" title="Link to this heading">#</a></h2>
-<p>Soit <code class="docutils literal notranslate"><span class="pre">t</span></code> une variable de type tableau contenant telle que <code class="docutils literal notranslate"><span class="pre">t=[7,1,3,9,7,6,2,7,5,9]</span></code>.</p>
-<ol class="arabic">
-<li><p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">occurence</span></code> qui prend en paramètres un tableau <code class="docutils literal notranslate"><span class="pre">tab</span></code> et une valeur <code class="docutils literal notranslate"><span class="pre">x</span></code>. Cette fonction
-renvoie le nombre d’occurences de la valeur <code class="docutils literal notranslate"><span class="pre">x</span></code> que contient le tableau <code class="docutils literal notranslate"><span class="pre">tab</span></code>. Si la valeur n’est pas présente
-dans le tableau, la fonction renvoie <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
-<p class="rubric">Par exemple:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">occurence</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
-<span class="go">3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">occurence</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="go">0</span>
-</pre></div>
-</div>
-</li>
-<li><p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">decale</span></code> qui prend en paramètre le tableau <code class="docutils literal notranslate"><span class="pre">tab</span></code> et le modifie en décalant toutes les nombres
-qu’il contient de 1 rang vers la droite. La première position, laissée libre, sera occupée par la dernière
-valeur décalée du tableau.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">decale</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="go">[9,7,1,3,9,7,6,2,7,5]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">decale</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="go">[5,9,7,1,3,9,7,6,2,7]</span>
-</pre></div>
-</div>
-</li>
-</ol>
-</section>
-<section id="exercice-6">
-<h2>Exercice 6<a class="headerlink" href="#exercice-6" title="Link to this heading">#</a></h2>
 <p>Lors d’un examen, un candidat a eu les notes suivantes:</p>
 <ul class="simple">
 <li><p>français: 12, coefficient : 4</p></li>
@@ -448,6 +346,43 @@ valeur décalée du tableau.</p>
 <li><p>Écrire une boucle qui affiche seulement les notes. Puis seulement les coefficients.</p></li>
 <li><p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">moyenne</span></code> qui prend en paramètre la liste de notes et renvoie la moye nne des notes affectées de
 leurs coefficients.</p></li>
+</ol>
+</section>
+<section id="exercice-3">
+<h2>Exercice 3<a class="headerlink" href="#exercice-3" title="Link to this heading">#</a></h2>
+<p>On représente une grille carrée de dimension 5 par un tableau. Chaque ligne de la grille est un tableau contenant 5 valeurs. Au début, la grille est vide et elle est représentée par un tableau ne contenant que des zéros.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/dames_1.svg"><img alt="../_images/dames_1.svg" src="../_images/dames_1.svg" width="200" /></a>
+</figure>
+<ol class="arabic">
+<li><p>La variable <a href="#id1"><span class="problematic" id="id2">``</span></a>damier``contient le tableau représentant la grille de dimension 5. Quel est est le contenu de cette variable.</p></li>
+<li><p>On ajoute des pions sur cette grille. On dispose de 5 pions blancs sur la ligne du haut et 5 pions noirs sur la ligne du bas.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/dames_2.svg"><img alt="../_images/dames_2.svg" src="../_images/dames_2.svg" width="200" /></a>
+</figure>
+<p>Un pion blanc est représenté par la valeur 1 dans la grille et un pion noir est représenté par la valeur 2 dans la grille. Modifier la variable <code class="docutils literal notranslate"><span class="pre">damier</span></code> en y ajoutant les pions.</p>
+</li>
+<li><p>Les pions se déplacent verticalement. Les pions blancs vers le bas et les pions noirs vers le haut. Écrire une fonction <code class="docutils literal notranslate"><span class="pre">deplace</span></code> qui permet de déplacer un pion (blanc ou noir) d’une case. Un pion ne peut pas se déplacer s’il est bloqué par un autre pion ou s’il est sur le bord.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/dames_3.svg"><img alt="../_images/dames_3.svg" src="../_images/dames_3.svg" width="200" /></a>
+</figure>
+</li>
+<li><p>Lorsqu’un pion blanc est bloqué par un pion noir, il peut avancer uniquement en diagonale. Pour cela, il faut qu’un pion noir soit présent et alors il passe par dessus à condition de retomber dans la grille et sur une case vide. Le pion sauté n’est pas supprimé.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/dames_4.svg"><img alt="../_images/dames_4.svg" src="../_images/dames_4.svg" width="200" /></a>
+</figure>
+<p>Sur la figure, un pion blanc peut avancer car la case est libre en diagonale et l’autre est bloqué car la case est occupée par un pion noir.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">sauter</span></code> qui fait sauter un pion en diagonale. Il faut :</p>
+<ul class="simple">
+<li><p>vérifier que le pion est bien bloqué;</p></li>
+<li><p>vérifier que le pion reste dans la grille;</p></li>
+<li><p>vérifier que la case est libre.</p></li>
+</ul>
+<p>Si c’est bien le cas, le pion est déplacé dans la grille.</p>
+</li>
+<li><p>Le jeu s’arête lorsqu’un des joueurs a réussi à placer tous ses pions sur la ligne adverse. Si la partie est bloquée, le vainqueur est celui qui a le plus grand nombre de pions sur la ligne adverse.. En cas d’égalité, il y a match nul.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">fin_partie</span></code> qui vérifie si les blancs ou les noirs ont gagné.</p>
+</li>
 </ol>
 </section>
 </section>
@@ -500,9 +435,6 @@ leurs coefficients.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">Exercice 3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-4">Exercice 4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-5">Exercice 5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-6">Exercice 6</a></li>
 </ul>
   </nav></div>
 

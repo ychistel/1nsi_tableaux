@@ -303,7 +303,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-tableaux-en-python">Les tableaux en Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipuler-les-elements-d-une-liste">Manipuler les éléments d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tableau-de-tableaux">Tableau de tableaux</a></li>
 </ul>
             </nav>
@@ -322,9 +321,9 @@ document.write(`
 <p>On définit le type tableau de la façon suivante:</p>
 <ul class="simple">
 <li><p>Le tableau est de <strong>dimension fixe</strong>. Cela signifie qu’il accepte un nombre fixe de valeurs;</p></li>
-<li><p>Les données d’un tableau sont du même type : des nombres ou des chaines de caractères ou etc;</p></li>
-<li><p>Le type tableau autorise la modification de ses valeurs;</p></li>
-<li><p>Le type tableau ne permet pas l’ajout de valeurs ou la suppression de valeurs.</p></li>
+<li><p>Les données d’un tableau sont du <strong>même type</strong> : des nombres ou des chaines de caractères ou etc;</p></li>
+<li><p>Le type tableau autorise la <strong>modification</strong> de ses valeurs;</p></li>
+<li><p>Le type tableau <strong>ne permet pas l’ajout ou la suppression</strong> de valeurs.</p></li>
 </ul>
 <section id="les-tableaux-en-python">
 <h2>Les tableaux en Python<a class="headerlink" href="#les-tableaux-en-python" title="Link to this heading">#</a></h2>
@@ -388,9 +387,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</section>
-<section id="manipuler-les-elements-d-une-liste">
-<h2>Manipuler les éléments d’une liste<a class="headerlink" href="#manipuler-les-elements-d-une-liste" title="Link to this heading">#</a></h2>
 <p class="rubric">Un type itérable</p>
 <p>On peut parcourir les éléments d’une liste et donc récupérer ses valeurs en <strong>itérant</strong> cette liste avec une boucle.</p>
 <ol class="arabic">
@@ -416,56 +412,12 @@ document.write(`
 </li>
 </ol>
 <p class="rubric">Modifier une valeur de la liste</p>
-<p>La modification d’une valeur d’une liste est possible. Pour cela, on procède à une nouvelle affectation sur l’élément
-de la liste en précisant son indice et la nouvelle valeur.</p>
+<p>La modification d’une valeur d’une liste est possible. Pour cela, on procède à une nouvelle affectation sur l’élément de la liste en précisant son indice et la nouvelle valeur.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># on définit la variable jours de type liste:</span>
 <span class="n">jours</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jedi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">]</span>
 
 <span class="c1"># zut il manque un &quot;u&quot; à jeudi qui a pour indice 3 ! On modifie :</span>
 <span class="n">jours</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;jeudi&quot;</span>
-</pre></div>
-</div>
-<p class="rubric">Ajouter une valeur à une liste</p>
-<p>Si les tuples sont des tableaux non modifiables, les listes sont des tableaux que l’on peut agrandir en ajoutant des éléments.</p>
-<p>Plusieurs méthodes sont possibles :</p>
-<ul class="simple">
-<li><p>Par concaténation de deux listes existantes avec l’opérateur + ;</p></li>
-<li><p>En utilisant la méthode <strong>append</strong> qui permet d’ajouter une valeur en fin de liste.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Soit 2 tableaux de nombres</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">u</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-
-<span class="c1"># Concaténation des tableaux</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">+</span> <span class="n">u</span>
-<span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-
-<span class="c1"># Avec la méthode **append** :</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
-<span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-</pre></div>
-</div>
-<p class="rubric">Supprimer une valeur dans la liste</p>
-<p>La suppression d’une valeur d’un tableau, en Python, ne se fait que sur les listes. La fonction <code class="docutils literal notranslate"><span class="pre">del</span></code> et les
-méthodes <code class="docutils literal notranslate"><span class="pre">remove</span></code> et <code class="docutils literal notranslate"><span class="pre">pop</span></code> permettent de supprimer un élément du tableau. Elles s’utilisent très différemment:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># liste de mots</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">mots</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;na&quot;</span><span class="p">,</span><span class="s2">&quot;ne&quot;</span><span class="p">,</span><span class="s2">&quot;ni&quot;</span><span class="p">,</span><span class="s2">&quot;no&quot;</span><span class="p">,</span><span class="s2">&quot;nu&quot;</span><span class="p">]</span>
-
-<span class="c1"># on supprime le dernier élément et on récupère sa valeur</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">mots</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-<span class="s1">&#39;nu&#39;</span> <span class="c1">#  --&gt;  la liste mots = [&quot;na&quot;,&quot;ne&quot;,&quot;ni&quot;,&quot;no&quot;]</span>
-
-<span class="c1"># on supprime le second élément et on récupère sa valeur</span>
-<span class="o">&gt;&gt;&gt;</span><span class="n">mots</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="s1">&#39;ne&#39;</span> <span class="c1">#  --&gt; la liste mots = [&quot;na&quot;,&quot;ni&quot;,&quot;no&quot;]</span>
-
-<span class="c1"># on supprime le premier élément avec del</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">mots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#  --&gt; la liste mots = [&quot;ni&quot;,&quot;no&quot;]</span>
-
-<span class="c1"># on supprime le mot &quot;no&quot;</span>
-<span class="n">mots</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;no&quot;</span><span class="p">)</span> <span class="c1"># --&gt; la liste mots = [&quot;ni&quot;]</span>
 </pre></div>
 </div>
 </section>
@@ -560,7 +512,6 @@ valeur puis un second indice pour obtenir la valeur dans le tableau sélectionn�
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-tableaux-en-python">Les tableaux en Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipuler-les-elements-d-une-liste">Manipuler les éléments d’une liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tableau-de-tableaux">Tableau de tableaux</a></li>
 </ul>
   </nav></div>
