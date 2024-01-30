@@ -6,10 +6,9 @@ En programmation, un **tableau** est un type de données qui permet d'écrire pl
 On définit le type tableau de la façon suivante:
 
 - Le tableau est de **dimension fixe**. Cela signifie qu'il accepte un nombre fixe de valeurs;
-- Les données d'un tableau sont du même type : des nombres ou des chaines de caractères ou etc;
-- Le type tableau autorise la modification de ses valeurs;
-- Le type tableau ne permet pas l'ajout de valeurs ou la suppression de valeurs.
-
+- Les données d'un tableau sont du **même type** : des nombres ou des chaines de caractères ou etc;
+- Le type tableau autorise la **modification** de ses valeurs;
+- Le type tableau **ne permet pas l'ajout ou la suppression** de valeurs.
 
 Les tableaux en Python
 ----------------------
@@ -88,9 +87,6 @@ Pour accéder à un élément du tableau (tuple ou liste), on utilise son indice
       >>> jours[-2]
       "samedi"
 
-Manipuler les éléments d'une liste
-----------------------------------
-
 .. rubric:: Un type itérable
 
 On peut parcourir les éléments d'une liste et donc récupérer ses valeurs en **itérant** cette liste avec une boucle.
@@ -119,8 +115,7 @@ On peut parcourir les éléments d'une liste et donc récupérer ses valeurs en 
 
 .. rubric:: Modifier une valeur de la liste
 
-La modification d'une valeur d'une liste est possible. Pour cela, on procède à une nouvelle affectation sur l'élément
-de la liste en précisant son indice et la nouvelle valeur.
+La modification d'une valeur d'une liste est possible. Pour cela, on procède à une nouvelle affectation sur l'élément de la liste en précisant son indice et la nouvelle valeur.
 
 .. code:: python
 
@@ -129,55 +124,6 @@ de la liste en précisant son indice et la nouvelle valeur.
 
    # zut il manque un "u" à jeudi qui a pour indice 3 ! On modifie :
    jours[3] = "jeudi"
-
-.. rubric:: Ajouter une valeur à une liste
-
-Si les tuples sont des tableaux non modifiables, les listes sont des tableaux que l'on peut agrandir en ajoutant des éléments.
-
-Plusieurs méthodes sont possibles :
-
--  Par concaténation de deux listes existantes avec l'opérateur + ;
--  En utilisant la méthode **append** qui permet d'ajouter une valeur en fin de liste.
-
-.. code:: python
-
-   # Soit 2 tableaux de nombres
-   >>> t=[0,1,2]
-   >>> u=[3,4,5]
-   
-   # Concaténation des tableaux
-   >>> t + u
-   [0,1,2,3,4,5]
-
-   # Avec la méthode **append** :
-   >>> t=[0,1,2]
-   >>> t.append(3)
-   >>> t
-   [0,1,2,3]
-
-.. rubric:: Supprimer une valeur dans la liste
-
-La suppression d'une valeur d'un tableau, en Python, ne se fait que sur les listes. La fonction ``del`` et les
-méthodes ``remove`` et ``pop`` permettent de supprimer un élément du tableau. Elles s'utilisent très différemment:
-
-.. code:: python
-
-   # liste de mots
-   >>> mots = ["na","ne","ni","no","nu"]
-   
-   # on supprime le dernier élément et on récupère sa valeur
-   >>> mots.pop()
-   'nu' #  -->  la liste mots = ["na","ne","ni","no"]
-
-   # on supprime le second élément et on récupère sa valeur
-   >>>mots.pop(1)
-   'ne' #  --> la liste mots = ["na","ni","no"]
-
-   # on supprime le premier élément avec del
-   >>> del mots[0] #  --> la liste mots = ["ni","no"]
-
-   # on supprime le mot "no"
-   mots.remove("no") # --> la liste mots = ["ni"]
 
 Tableau de tableaux
 -------------------

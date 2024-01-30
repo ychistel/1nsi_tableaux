@@ -6,24 +6,56 @@ Exercices
 Exercice 1
 ---------
 
-On considère la liste de nombres suivante: ``L=[1,2,0,4,5]``.
+On considère le tableau ``T=[[1,2],[4,5],[7,8]]``.
 
-#. Écrire une instruction python qui remplace la valeur 0 de la liste L par la valeur 3.
-#. Écrire un script python qui ajoute le nombre 10 à toutes les valeurs de la liste L.
-#. Écrire la fonction ``augmente`` qui prend en paramètre un tableau ``t`` de nombres et un nombre entier ``x``. Cette fonction renvoie le tableau ``t`` après avoir ajouté le nombre ``x`` à toutes les valeurs du tableau ``t``.
+#. Quelle est la dimension du tableau T ?
+#. Écrire un code python qui remplace la valeur 4 du tableau ``T`` par la valeur 6.
+#. Écrire un code python qui remplace la valeur 2 du tableau ``T`` par la valeur 4.
+#. Écrire un script python qui ajoute le nombre 1 à toutes les valeurs du tableau T.
 
 Exercice 2
 ----------
 
-Soit L1 et L2 deux tuples tels que : ``L1 = (1,3,5,7,9)`` et ``L2 = (2,4,6,8)``.
+On représente une grille carrée de dimension 5 par un tableau. Chaque ligne de la grille est un tableau contenant 5 valeurs. Au début, la grille est vide et elle est représentée par un tableau ne contenant que des zéros.
 
-#. Est-il possible d'ajouter les valeurs de L2 à la fin de L1 ? Justifier.
-#. La fonction ``list(tuple)`` transforme un tuple en liste.
-   Transformer les tuples L1 et L2 en listes.
-#. Écrire un script python qui rassemble dans une même liste L3 les éléments de L1, en début de liste, puis les éléments
-   de  L2 en fin de liste L. On doit obtenir ``L3 = [1,3,5,7,9,2,4,6,8]``.
-#. Écrire un script python qui rassemble dans une même liste L4 les éléments de L1 avec les éléments de L2 rangés dans l'ordre
-   croissant. On doit obtenir ``L4 = [1,2,3,4,5,6,7,8,9]``.
+.. figure:: ../img/dames_1.svg
+   :align: center
+   :width: 200
+
+#. La variable ``damier``contient le tableau représentant la grille de dimension 5. Quel est est le contenu de cette variable.
+
+#. On ajoute des pions sur cette grille. On dispose de 5 pions blancs sur la ligne du haut et 5 pions noirs sur la ligne du bas.
+
+   .. figure:: ../img/dames_2.svg
+      :align: center
+      :width: 200
+
+   Un pion blanc est représenté par la valeur 1 dans la grille et un pion noir est représenté par la valeur 2 dans la grille. Modifier la variable ``damier`` en y ajoutant les pions.
+
+#. Les pions se déplacent verticalement. Les pions blancs vers le bas et les pions noirs vers le haut. Écrire une fonction ``deplace`` qui permet de déplacer un pion (blanc ou noir) d'une case. Un pion ne peut pas se déplacer s'il est bloqué par un autre pion ou s'il est sur le bord.
+
+   .. figure:: ../img/dames_3.svg
+      :align: center
+      :width: 200
+
+#. Lorsqu'un pion blanc est bloqué par un pion noir, il peut avancer uniquement en diagonale. Pour cela, il faut qu'un pion noir soit présent et alors il passe par dessus à condition de retomber dans la grille et sur une case vide. Le pion sauté n'est pas supprimé.
+
+   .. figure:: ../img/dames_4.svg
+      :align: center
+      :width: 200
+
+   Sur la figure, un pion blanc peut avancer car la case est libre en diagonale et l'autre est bloqué car la case est occupée par un pion noir.
+
+   Écrire une fonction ``sauter`` qui fait sauter un pion en diagonale. Il faut :
+
+   - vérifier que le pion est bien bloqué;
+   - vérifier que le pion reste dans la grille;
+   - vérifier que la case est libre.
+
+   Si c'est bien le cas, le pion est déplacé dans la grille.
+
+#. Le jeu s'arête lorsqu'un des joueurs a réussi à placer tous ses pions sur la ligne adverse. Si la partie est bloquée, le vainqueur est celui qui a le plus grand nombre de pions sur la ligne adverse.. En cas d'égalité, il y a match nul.
+
 
 
 Exercice 3
