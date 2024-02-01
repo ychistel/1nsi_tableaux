@@ -44,7 +44,7 @@ On représente une grille carrée de dimension 5 par un tableau. Chaque ligne de
    :align: center
    :width: 200
 
-#. La variable ``damier``contient le tableau représentant la grille de dimension 5. Quel est est le contenu de cette variable.
+#. La variable ``damier`` contient le tableau représentant la grille de dimension 5. Quel est est le contenu de cette variable.
 
 #. On ajoute des pions sur cette grille. On dispose de 5 pions blancs sur la ligne du haut et 5 pions noirs sur la ligne du bas.
 
