@@ -17,5 +17,4 @@ En Python, les tableaux sont représentés par une structure de type ``list``. C
    content/tetris.rst
    content/cours.rst
    content/exercice.rst
-   content/tp_carre_magique.rst
    content/tp_tableau_par_comprehension.rst
