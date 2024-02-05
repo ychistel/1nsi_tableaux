@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Créer des listes par compréhension &#8212; 1 NSI</title>
+    <title>Créer des listes en Python &#8212; 1 NSI</title>
   
   
   
@@ -46,7 +46,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/tp_tableau_par_comprehension';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="prev" title="Carré magique" href="tp_carre_magique.html" />
+    <link rel="prev" title="Exercices" href="exercice.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
   </head>
@@ -151,8 +151,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tetris.html">Données structurées : tableaux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cours.html">Les tableaux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercice.html">Exercices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tp_carre_magique.html">Carré magique</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Créer des listes par compréhension</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Créer des listes en Python</a></li>
 </ul>
 
     </div>
@@ -278,7 +277,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -289,11 +290,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Créer des listes par compréhension</h1>
+    <h1>Créer des listes en Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-avec-la-methode-append">Construction avec la méthode <code class="docutils literal notranslate"><span class="pre">append</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-avec-la-concatenation">Construction avec la concaténation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-par-comprehension">Construction par compréhension</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -305,29 +316,37 @@ document.write(`
                   
   <div class="toctree-wrapper compound">
 </div>
-<section id="creer-des-listes-par-comprehension">
-<h1>Créer des listes par compréhension<a class="headerlink" href="#creer-des-listes-par-comprehension" title="Link to this heading">#</a></h1>
-<ol class="arabic">
-<li><p>Une liste L1 est créée à l’aide d’une boucle for. On donne le code en
-Python:</p>
+<section id="creer-des-listes-en-python">
+<h1>Créer des listes en Python<a class="headerlink" href="#creer-des-listes-en-python" title="Link to this heading">#</a></h1>
+<p>Une liste python est le type qui permet de représenter des tableaux. Les listes Python sont des tableaux dynamiques car ils peuvent être agrandis ou réduits. Cela signifie que l’on peut ajouter ou supprimer des valeurs dans une liste.</p>
+<p>Il existe plusieurs pour créer des listes:</p>
+<ul class="simple">
+<li><p>On crée une liste vide et ensuite on ajoute des valeurs avec la méthode <code class="docutils literal notranslate"><span class="pre">append</span></code>;</p></li>
+<li><p>On crée des listes par concaténation;</p></li>
+<li><p>On crée des listes par compréhension.</p></li>
+</ul>
+<section id="construction-avec-la-methode-append">
+<h2>Construction avec la méthode <code class="docutils literal notranslate"><span class="pre">append</span></code><a class="headerlink" href="#construction-avec-la-methode-append" title="Link to this heading">#</a></h2>
+<p>On donne le code en Python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># on crée une liste vide L1</span>
 <span class="n">L1</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">L1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+      <span class="n">L1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="loweralpha simple">
+<ol class="arabic simple">
 <li><p>Quel est le contenu de la liste L1 ?</p></li>
 <li><p>Écrire un code en Python pour créer la liste <code class="docutils literal notranslate"><span class="pre">L2</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">3,</span> <span class="pre">5,</span> <span class="pre">7,</span> <span class="pre">9,</span> <span class="pre">11,</span> <span class="pre">13,</span> <span class="pre">15]</span></code> avec une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p></li>
+<li><p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">liste_nulle</span></code> qui prend en paramètre la taille <code class="docutils literal notranslate"><span class="pre">n</span></code> de la liste et renvoie une liste contenant <code class="docutils literal notranslate"><span class="pre">n</span></code> fois la valeur <code class="docutils literal notranslate"><span class="pre">0</span></code>. Par exemple, l’appel <code class="docutils literal notranslate"><span class="pre">L3</span> <span class="pre">=</span> <span class="pre">liste_nulle(8)</span></code> crée la liste <code class="docutils literal notranslate"><span class="pre">L3</span> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0]</span></code>.</p></li>
 </ol>
-</li>
-<li><p>La méthode suivante permet de créer des listes qui ont la particularité d’avoir la même valeur à tous les indices.
-Soit par exemple la liste <code class="docutils literal notranslate"><span class="pre">L3</span> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0]</span></code>.</p>
-<ol class="loweralpha simple">
-<li><p>Écrire un code en Python qui crée la liste L3 avec une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p></li>
-<li><p>Écrire un code en Python qui crée la liste L3 en utilisant la concaténation de liste.</p></li>
-</ol>
-</li>
+</section>
+<section id="construction-avec-la-concatenation">
+<h2>Construction avec la concaténation<a class="headerlink" href="#construction-avec-la-concatenation" title="Link to this heading">#</a></h2>
+<p>On peut concaténer des listes Python comme on le fait avec des chaines de caractères.</p>
+<p>Par exemple, la concaténation des listes <code class="docutils literal notranslate"><span class="pre">[1,2]</span></code> et <code class="docutils literal notranslate"><span class="pre">[3,4]</span></code> donne la liste <code class="docutils literal notranslate"><span class="pre">[1,2,3,4]</span></code>.</p>
+<ol class="arabic">
+<li><p>Écrire en Python la concaténation des listes <code class="docutils literal notranslate"><span class="pre">[1,2]</span></code> et <code class="docutils literal notranslate"><span class="pre">[3,4]</span></code>.</p></li>
+<li><p>Écrire un code en Python qui crée la liste <code class="docutils literal notranslate"><span class="pre">L3</span> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0]</span></code> en utilisant la concaténation de liste.</p></li>
 <li><p>On donne la fonction suivante écrite en Python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># on crée une liste vide L1</span>
 <span class="k">def</span> <span class="nf">init_tab</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
@@ -349,34 +368,33 @@ Soit par exemple la liste <code class="docutils literal notranslate"><span class
 <li><p>Modifier la liste L7 pour avoir <code class="docutils literal notranslate"><span class="pre">L7</span> <span class="pre">=</span> <span class="pre">[[0,</span> <span class="pre">2,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]]</span></code>. Que remarque-t-on ?</p></li>
 </ol>
 </li>
-<li><p>On présente une dernière méthode de création de liste appelée <strong>méthode par compréhension</strong>.</p>
-<p>Par exemple, pour créer la liste L1, on écrit en python:</p>
+</ol>
+</section>
+<section id="construction-par-comprehension">
+<h2>Construction par compréhension<a class="headerlink" href="#construction-par-comprehension" title="Link to this heading">#</a></h2>
+<p>On présente une dernière méthode de création de liste appelée <strong>méthode par compréhension</strong>.
+Par exemple, pour créer la liste L1, on écrit en python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 </pre></div>
 </div>
-<ol class="loweralpha simple">
+<ol class="arabic simple">
 <li><p>Créer les tableaux suivants avec la méthode par compréhension:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">L8</span> <span class="pre">=</span> <span class="pre">['z','z','z','z']</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">L9</span> <span class="pre">=</span> <span class="pre">[1,2,3,4,5,6,7,8,9]</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">L10</span> <span class="pre">=</span> <span class="pre">[9,8,7,6,5,4,3,2,1]</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">L11</span> <span class="pre">=</span> <span class="pre">[1,4,9,16,25,36]</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">L12</span> <span class="pre">=</span> <span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">L10</span> <span class="pre">=</span> <span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]]</span></code></p></li>
 </ul>
 </li>
-<li><p>Recréer la liste <code class="docutils literal notranslate"><span class="pre">L13</span> <span class="pre">=</span> <span class="pre">[[0,</span> <span class="pre">0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]]</span></code> avec la méthode par compréhension.</p></li>
-<li><p>Modifier la liste <code class="docutils literal notranslate"><span class="pre">L13</span></code> pour avoir <code class="docutils literal notranslate"><span class="pre">L13</span> <span class="pre">=</span> <span class="pre">[[0,</span> <span class="pre">2,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]]</span></code>. Que remarque-t-on ?</p></li>
+<li><p>Recréer la liste <code class="docutils literal notranslate"><span class="pre">L11</span> <span class="pre">=</span> <span class="pre">[[0,</span> <span class="pre">0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]]</span></code> avec la méthode par compréhension.</p></li>
+<li><p>Modifier la liste <code class="docutils literal notranslate"><span class="pre">L11</span></code> pour avoir <code class="docutils literal notranslate"><span class="pre">L13</span> <span class="pre">=</span> <span class="pre">[[0,</span> <span class="pre">2,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]]</span></code>. Que remarque-t-on ?</p></li>
+<li><p>Créer les listes suivantes en utilisant la méthode par compréhension.</p></li>
 </ol>
-</li>
-<li><p>Créer les listes suivantes en utilisant la méthode par compréhension.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">L14</span> <span class="pre">=</span> <span class="pre">[[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5],</span> <span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6],</span> <span class="pre">[3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7],</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8]]</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">L15</span> <span class="pre">=</span> <span class="pre">[[1],</span> <span class="pre">[1,</span> <span class="pre">2],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]]</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">L16</span> <span class="pre">=</span> <span class="pre">[[1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1],</span> <span class="pre">[2,</span> <span class="pre">2,</span> <span class="pre">2,</span> <span class="pre">2,</span> <span class="pre">2],</span> <span class="pre">[3,</span> <span class="pre">3,</span> <span class="pre">0,</span> <span class="pre">3,</span> <span class="pre">3],</span> <span class="pre">[4,</span> <span class="pre">4,</span> <span class="pre">4,</span> <span class="pre">4,</span> <span class="pre">4],</span> <span class="pre">[5,</span> <span class="pre">5,</span> <span class="pre">5,</span> <span class="pre">5,</span> <span class="pre">5]]</span></code> (on crée la liste
-puis on la modifie)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">L12</span> <span class="pre">=</span> <span class="pre">[[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5],</span> <span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6],</span> <span class="pre">[3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7],</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8]]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">L13</span> <span class="pre">=</span> <span class="pre">[[1],</span> <span class="pre">[1,</span> <span class="pre">2],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">L14</span> <span class="pre">=</span> <span class="pre">[[1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1],</span> <span class="pre">[2,</span> <span class="pre">2,</span> <span class="pre">2,</span> <span class="pre">2,</span> <span class="pre">2],</span> <span class="pre">[3,</span> <span class="pre">3,</span> <span class="pre">0,</span> <span class="pre">3,</span> <span class="pre">3],</span> <span class="pre">[4,</span> <span class="pre">4,</span> <span class="pre">4,</span> <span class="pre">4,</span> <span class="pre">4],</span> <span class="pre">[5,</span> <span class="pre">5,</span> <span class="pre">5,</span> <span class="pre">5,</span> <span class="pre">5]]</span></code> (on crée la liste puis on la modifie)</p></li>
 </ul>
-</li>
-</ol>
+</section>
 </section>
 
 
@@ -391,12 +409,12 @@ puis on la modifie)</p></li>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tp_carre_magique.html"
+       href="exercice.html"
        title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">précédent</p>
-        <p class="prev-next-title">Carré magique</p>
+        <p class="prev-next-title">Exercices</p>
       </div>
     </a>
 </div>
@@ -406,7 +424,22 @@ puis on la modifie)</p></li>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-avec-la-methode-append">Construction avec la méthode <code class="docutils literal notranslate"><span class="pre">append</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-avec-la-concatenation">Construction avec la concaténation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-par-comprehension">Construction par compréhension</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
