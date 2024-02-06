@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Activité sur les tableaux &#8212; 1 NSI</title>
+    <title>Exercice type bac &#8212; 1 NSI</title>
   
   
   
@@ -43,11 +43,10 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script src="../_static/translations.js?v=d99ca74e"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/activite';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/exercice_bac';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="prev" title="Créer des listes en Python" href="tp_tableau_par_comprehension.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
   </head>
@@ -109,8 +108,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -150,12 +147,12 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tetris.html">Données structurées : tableaux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cours.html">Les tableaux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercice.html">Exercices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tp_tableau_par_comprehension.html">Créer des listes en Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercice_bac.html">Exercice type bac</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercice type bac</a></li>
 </ul>
 
     </div>
@@ -210,7 +207,7 @@
       
       
       
-      <li><a href="../_sources/content/activite.rst" target="_blank"
+      <li><a href="../_sources/content/exercice_bac.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Télécharger le fichier source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,9 +278,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -294,20 +289,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Activité sur les tableaux</h1>
+    <h1>Exercice type bac</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contenu </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-tableaux-en-python">Les tableaux en Python</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -317,71 +303,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="activite-sur-les-tableaux">
-<h1>Activité sur les tableaux<a class="headerlink" href="#activite-sur-les-tableaux" title="Link to this heading">#</a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>En informatique et en mathématiques, certaines données sont multiples comme les coordonnées d’un point dans un repère
-avec l’abscisse et l’ordonnée.</p>
-<p>On représente ces données avec des <strong>tableaux</strong>. Une variable peut contenir plusieurs valeurs contenues dans un tableau.</p>
-<p>Prenons l’exemple des notes d’un élève dans une discipline. Il est nécessaire de pouvoir accéder à toutes les notes à
-tout moment. De pouvoir modifier une valeur, en ajouter, en supprimer et même de les trier.</p>
-</section>
-<section id="les-tableaux-en-python">
-<h2>Les tableaux en Python<a class="headerlink" href="#les-tableaux-en-python" title="Link to this heading">#</a></h2>
-<p>En Python, les tableaux sont représentés par des listes. Ces listes regroupent les valeurs séparées par des virgules,
-le tout entre crochets: <code class="docutils literal notranslate"><span class="pre">[valeur_1,</span> <span class="pre">valeur_2 ,</span> <span class="pre">...,</span> <span class="pre">dernière_valeur ]</span></code>.</p>
-<p>Les valeurs d’une liste sont repérées par un <strong>indice</strong>. La première valeur a pour indice <span class="math notranslate nohighlight">\(0\)</span>, la seconde valeur a
-pour indice <span class="math notranslate nohighlight">\(1\)</span>, etc. Ces indices permettent d’accéder facilement aux valeurs de la liste.</p>
-<p>Certaines <strong>fonctions</strong> et <strong>méthodes</strong> sont applicables aux listes. Soit <code class="docutils literal notranslate"><span class="pre">l</span></code> une variable de type liste:</p>
-<ul class="simple">
-<li><p>La fonction <code class="docutils literal notranslate"><span class="pre">len(l)</span></code> renvoie le nombre de valeurs dans la liste.</p></li>
-<li><p>La fonction <code class="docutils literal notranslate"><span class="pre">min(l)</span></code> renvoie la plus petite valeur de la liste lorsque c’est possible.</p></li>
-<li><p>La fonction <code class="docutils literal notranslate"><span class="pre">max(l)</span></code> renvoie la plus grande valeur de la liste lorsque c’est possible.</p></li>
-<li><p>La fonction <code class="docutils literal notranslate"><span class="pre">sum(l)</span></code> calcule et renvoie la somme des valeurs (numériques) de la liste.</p></li>
-<li><p>La méthode <code class="docutils literal notranslate"><span class="pre">l.index(valeur)</span></code> renvoie l’indice, c’est à dire la position d’une valeur de la liste.</p></li>
-<li><p>La méthode <code class="docutils literal notranslate"><span class="pre">l.append(nouvelle_valeur)</span></code> ajoute une nouvelle valeur en fin de liste.</p></li>
-<li><p>La méthode <code class="docutils literal notranslate"><span class="pre">l.pop(indice_valeur)</span></code> supprime et renvoie la valeur à l’indice donné.</p></li>
-<li><p>La méthode <code class="docutils literal notranslate"><span class="pre">l.sort()</span></code> trie la liste des valeurs par ordre croissant.</p></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Avertissement</p>
-<p>Une méthode se place derrière une variable de type <strong>liste</strong> séparée par un point.</p>
-</div>
-<p class="rubric">Partie  1</p>
-<p>Un élève a les notes suivantes : 13, 7, 11, 18, 9 et 12.</p>
-<ol class="arabic simple">
-<li><p>Créer un tableau contenant toutes les notes affecté à la variable <code class="docutils literal notranslate"><span class="pre">notes</span></code>.</p></li>
-<li><p>Quelle est la valeur de <code class="docutils literal notranslate"><span class="pre">notes[2]</span></code> ?</p></li>
-<li><p>Comment obtenir la première et la dernière note du tableau ?</p></li>
-<li><p>Notre élève a une note supplémentaire de valeur 15. Ajouter cette note à la liste ?</p></li>
-<li><p>Comment connaitre le nombre de notes ? La note la plus haute ? La plus faible ?</p></li>
-<li><p>Proposer un script qui affiche chaque note du tableau séparée par un tiret.
-On doit obtenir l’affichage : 13 - 7 - 11 - 18 - 9 - 12</p></li>
-</ol>
-<p class="rubric">Partie 2</p>
-<ol class="arabic">
-<li><p>On donne le code suivant:</p>
-<img alt="image" class="align-center" src="../_images/algo1.jpg" />
-<p>Quelle est la valeur obtenue à l’appel <code class="docutils literal notranslate"><span class="pre">nb_notes_inf_sup(notes,10)</span></code> ?</p>
-</li>
-<li><p>En statistiques, on appelle étendue, la différence entre la plus grande et la plus petite valeur de la série de notes.</p>
-<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">etendue</span></code> prenant en paramètre la liste de notes et renvoyant l’étendue de la liste de notes.</p>
-</li>
-<li><p>La moyenne d’une série de notes se calcule par la somme de toutes les notes divisée par le nombre de notes.</p>
-<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">moyenne</span></code> qui prend en paramètre la liste de notes et renvoie la moyenne des notes de l’élève.</p>
-</li>
-<li><p>La médiane d’une série de notes est la note qui a autant de valeurs inférieures que de valeurs supérieures. On tient
-compte de la parité du nombre de notes.</p>
-<p>Par exemple:</p>
-<ul class="simple">
-<li><p>la médiane de la liste de notes <code class="docutils literal notranslate"><span class="pre">notes</span> <span class="pre">=</span> <span class="pre">[13,</span> <span class="pre">7,</span> <span class="pre">11,</span> <span class="pre">18,</span> <span class="pre">9,</span> <span class="pre">12]</span></code> est <code class="docutils literal notranslate"><span class="pre">11.5</span></code></p></li>
-<li><p>la médiane de la liste de notes <code class="docutils literal notranslate"><span class="pre">notes</span> <span class="pre">=</span> <span class="pre">[13,</span> <span class="pre">7,</span> <span class="pre">11,</span> <span class="pre">18,</span> <span class="pre">9,</span> <span class="pre">12,</span> <span class="pre">15]</span></code> est <code class="docutils literal notranslate"><span class="pre">12</span></code></p></li>
-</ul>
-<p>Écrire la fonction <code class="docutils literal notranslate"><span class="pre">mediane</span></code> qui prend en paramètre la liste notes et renvoie la note médiane.</p>
-</li>
-</ol>
-</section>
+  <section id="exercice-type-bac">
+<h1>Exercice type bac<a class="headerlink" href="#exercice-type-bac" title="Link to this heading">#</a></h1>
+<p>Des exercices sur les tableaux sont fréquents à l’épreuve du baccalauréat. En voici un donné lors de la session 2021 en métropole.</p>
+<p><a class="reference download internal" download="" href="../_downloads/03d8ea57531848e2d2331b428454916b/exercice_labyrinthe.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Exercice</span> <span class="pre">sur</span> <span class="pre">les</span> <span class="pre">tableaux</span></code></a></p>
 </section>
 
 
@@ -395,6 +320,15 @@ compte de la parité du nombre de notes.</p>
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="tp_tableau_par_comprehension.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Créer des listes en Python</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -402,21 +336,7 @@ compte de la parité du nombre de notes.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contenu
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-tableaux-en-python">Les tableaux en Python</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>

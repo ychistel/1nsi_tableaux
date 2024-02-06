@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a6621bbe" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=72851d7f" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -153,6 +153,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Les tableaux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercice.html">Exercices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tp_tableau_par_comprehension.html">Créer des listes en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercice_bac.html">Exercice type bac</a></li>
 </ul>
 
     </div>
@@ -328,21 +329,27 @@ document.write(`
 <h2>Les tableaux en Python<a class="headerlink" href="#les-tableaux-en-python" title="Link to this heading">#</a></h2>
 <p>En python, la structure de données <strong>tableau</strong> n’existe pas. On construit des tableaux avec la structure de données <code class="docutils literal notranslate"><span class="pre">list</span></code> ou <code class="docutils literal notranslate"><span class="pre">tuple</span></code>.</p>
 <p class="rubric">Le type liste</p>
-<p>Un tableau construit avec une <strong>liste</strong> est un <strong>tableau dynamique</strong>. Cela modifie le comportement d’un tableau :</p>
+<div class="definition admonition">
+<p class="admonition-title">Définition</p>
+<p>Un tableau construit avec une <strong>liste</strong> est un <strong>tableau dynamique</strong>.</p>
 <ul class="simple">
 <li><p>La dimension d’une liste est variable, elle s’adapte au nombre de valeurs à écrire;</p></li>
 <li><p>Les données peuvent avoir des types différents (nombres entiers et chaines de caractères dans une même liste)</p></li>
 <li><p>On peut ajouter, modifier, ou supprimer des valeurs ce qui change la dimension de la liste.</p></li>
 </ul>
 <p>Une liste se note entre <strong>crochets</strong> et contient les valeurs séparées par des virgules.</p>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># jours de la semaine dans une liste</span>
 <span class="n">jours</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p class="rubric">Le type tuple</p>
-<p>Un tableau construit avec un <strong>tuple</strong> est un tableau <strong>non mutable</strong> ou <strong>immuable</strong>.</p>
-<p>Cela siginie que sa dimension est fixe, qu’on ne peut pas modifier ses valeurs, ni en supprimer, ni en ajouter.</p>
-<p>Un <strong>tuple</strong> se note entre <strong>parenthèses</strong> et contient les valeurs séparées par des virgules.</p>
+<div class="definition admonition">
+<p class="admonition-title">Définition</p>
+<p>Un tableau construit avec un <strong>tuple</strong> est un tableau <strong>non mutable</strong> ou <strong>immuable</strong>.
+Cela siginie que sa dimension est fixe, qu’on ne peut pas modifier ses valeurs, ni en supprimer, ni en ajouter.
+Un <strong>tuple</strong> se note entre <strong>parenthèses</strong> et contient les valeurs séparées par des virgules.</p>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># jours de la semaine dans un tuple</span>
 <span class="n">jours</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">)</span>
 </pre></div>
@@ -360,6 +367,8 @@ document.write(`
 </pre></div>
 </div>
 <p class="rubric">Accéder à une valeur du tableau</p>
+<div class="propriete admonition">
+<p class="admonition-title">Propriétés</p>
 <p>Pour accéder à un élément du tableau (tuple ou liste), on utilise son indice (index en anglais) placé entre crochets juste après le nom de la variable.</p>
 <ul class="simple">
 <li><p>Le premier élément d’un tableau est d’indice 0;</p></li>
@@ -367,8 +376,7 @@ document.write(`
 <li><p>Le dernier élément d’un tableau a pour indice la dimension du tableau - 1;</p></li>
 <li><p>On peut aussi accéder au dernier élément ave l’indice -1.</p></li>
 </ul>
-<div class="admonition-exemple admonition">
-<p class="admonition-title">Exemple</p>
+</div>
 <p>On reprend le tuple sur les jours de la semaine:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># jours de la semaine dans un tuple</span>
 <span class="n">jours</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">)</span>
@@ -384,7 +392,6 @@ document.write(`
 <span class="o">&gt;&gt;&gt;</span> <span class="n">jours</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 <span class="s2">&quot;samedi&quot;</span>
 </pre></div>
-</div>
 </div>
 <p class="rubric">Un type itérable</p>
 <p>On peut parcourir les éléments d’une liste et donc récupérer ses valeurs en <strong>itérant</strong> cette liste avec une boucle.</p>
@@ -423,9 +430,7 @@ document.write(`
 <section id="tableau-de-tableaux">
 <h2>Tableau de tableaux<a class="headerlink" href="#tableau-de-tableaux" title="Link to this heading">#</a></h2>
 <p>Un tableau peut contenir des tableaux ! On parle alors de tableaux à 2 dimensions.</p>
-<div class="admonition-exemple admonition">
-<p class="admonition-title">Exemple</p>
-<p>Une grille de jeu peut se représenter par un tableau à 2 dimensions:</p>
+<p>Par exemple, une grille de jeu peut se représenter par un tableau à 2 dimensions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grille</span> <span class="o">=</span> <span class="p">[</span>
    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>    <span class="c1"># première ligne</span>
    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>    <span class="c1"># seconde ligne</span>
@@ -433,11 +438,15 @@ document.write(`
 <span class="p">]</span>
 </pre></div>
 </div>
+<div class="propriete admonition">
+<p class="admonition-title">Propriété</p>
+<p>L’accès à une valeur d’un tableau de tableaux se fait avec 2 indices:</p>
+<ul class="simple">
+<li><p>un premier indice pour accéder au tableau où se trouve la valeur;</p></li>
+<li><p>un second indice pour obtenir la valeur dans le tableau sélectionné.</p></li>
+</ul>
+<p>Les indices sont notés entre crochets.</p>
 </div>
-<p>Pour accéder à une valeur de ce tableau, on utilise un premier indice pour sélectionner le tableau où se trouve la
-valeur puis un second indice pour obtenir la valeur dans le tableau sélectionné. Les indices sont notés entre crochets.</p>
-<div class="admonition-exemple admonition">
-<p class="admonition-title">Exemple</p>
 <p>Soit un tableau T contenant les tableaux [4,5],[6,7] et [8,9].</p>
 <p>En python, avec les listes, on a <code class="docutils literal notranslate"><span class="pre">T=[[4,5],[6,7],[8,9]]</span></code>. On peut remarquer:</p>
 <ul class="simple">
@@ -445,21 +454,20 @@ valeur puis un second indice pour obtenir la valeur dans le tableau sélectionn�
 <li><p>que le tableau [4,5] a pour indice 0, le tableau [6,7] a pour indice 1 et le tableau [8,9] a pour indice 2 ;</p></li>
 <li><p>que les valeurs ont pour indice 0 et 1 pour chacun des trois tableaux de longueur 2.</p></li>
 </ul>
-</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Liste contenant 3 listes</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">T</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">T</span><span class="o">=</span><span class="p">[[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
 <span class="mi">3</span> <span class="c1"># --&gt; renvoie la valeur 3 car T contient 3 listes</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="mi">4</span> <span class="c1"># --&gt; renvoie 4 car la première liste a pour longueur 4  T[0]=[1,2,3,4]</span>
+<span class="mi">2</span> <span class="c1"># --&gt; T[0] est la première liste qui a pour longueur 2 : T[0]=[4,5]</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">T</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="c1"># renvoie la liste [8,9] qui est le dernier élément du tableau T</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
-<span class="mi">3</span> <span class="c1"># renvoie le nombre 3 car T[0] est la liste [1,2,3,4] et que l&#39;élément d&#39;indice 2 est 3.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="mi">6</span> <span class="c1"># renvoie le nombre 6 car T[1] est la liste [6,7] et que l&#39;élément d&#39;indice 0 est 6.</span>
 </pre></div>
 </div>
 </section>

@@ -17,13 +17,16 @@ En python, la structure de données **tableau** n'existe pas. On construit des t
 
 .. rubric:: Le type liste
 
-Un tableau construit avec une **liste** est un **tableau dynamique**. Cela modifie le comportement d'un tableau :
+.. admonition:: Définition
+   :class: definition
 
--  La dimension d'une liste est variable, elle s'adapte au nombre de valeurs à écrire;
--  Les données peuvent avoir des types différents (nombres entiers et chaines de caractères dans une même liste) 
--  On peut ajouter, modifier, ou supprimer des valeurs ce qui change la dimension de la liste.
+   Un tableau construit avec une **liste** est un **tableau dynamique**.
 
-Une liste se note entre **crochets** et contient les valeurs séparées par des virgules.
+   -  La dimension d'une liste est variable, elle s'adapte au nombre de valeurs à écrire;
+   -  Les données peuvent avoir des types différents (nombres entiers et chaines de caractères dans une même liste) 
+   -  On peut ajouter, modifier, ou supprimer des valeurs ce qui change la dimension de la liste.
+
+   Une liste se note entre **crochets** et contient les valeurs séparées par des virgules.
 
 .. code:: python
 
@@ -32,11 +35,12 @@ Une liste se note entre **crochets** et contient les valeurs séparées par des 
 
 .. rubric:: Le type tuple
 
-Un tableau construit avec un **tuple** est un tableau **non mutable** ou **immuable**.
+.. admonition:: Définition
+   :class: definition
 
-Cela siginie que sa dimension est fixe, qu'on ne peut pas modifier ses valeurs, ni en supprimer, ni en ajouter.
-
-Un **tuple** se note entre **parenthèses** et contient les valeurs séparées par des virgules.
+   Un tableau construit avec un **tuple** est un tableau **non mutable** ou **immuable**.
+   Cela siginie que sa dimension est fixe, qu'on ne peut pas modifier ses valeurs, ni en supprimer, ni en ajouter.
+   Un **tuple** se note entre **parenthèses** et contient les valeurs séparées par des virgules.
 
 .. code:: python
 
@@ -60,32 +64,33 @@ La dimension d'un tableau créé avec une liste ou un tuple est donné avec la f
 
 .. rubric:: Accéder à une valeur du tableau
 
-Pour accéder à un élément du tableau (tuple ou liste), on utilise son indice (index en anglais) placé entre crochets juste après le nom de la variable.
+.. admonition:: Propriétés
+   :class: propriete
+      
+   Pour accéder à un élément du tableau (tuple ou liste), on utilise son indice (index en anglais) placé entre crochets juste après le nom de la variable.
 
-- Le premier élément d'un tableau est d'indice 0;
-- Le deuxième élément d'un tableau a pour indice 1;
-- Le dernier élément d'un tableau a pour indice la dimension du tableau - 1;
-- On peut aussi accéder au dernier élément ave l'indice -1.
+   - Le premier élément d'un tableau est d'indice 0;
+   - Le deuxième élément d'un tableau a pour indice 1;
+   - Le dernier élément d'un tableau a pour indice la dimension du tableau - 1;
+   - On peut aussi accéder au dernier élément ave l'indice -1.
 
-.. admonition:: Exemple
-   
-   On reprend le tuple sur les jours de la semaine:
+On reprend le tuple sur les jours de la semaine:
 
-   .. code:: python
+.. code:: python
 
-      # jours de la semaine dans un tuple
-      jours = ("lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche")
+   # jours de la semaine dans un tuple
+   jours = ("lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche")
 
-      >>> jours[0]
-      "lundi"
-      >>> jours[1]
-      "mardi"
-      >>> jours[6]
-      "dimanche"
-      >>> jours[-1]
-      "dimanche"
-      >>> jours[-2]
-      "samedi"
+   >>> jours[0]
+   "lundi"
+   >>> jours[1]
+   "mardi"
+   >>> jours[6]
+   "dimanche"
+   >>> jours[-1]
+   "dimanche"
+   >>> jours[-2]
+   "samedi"
 
 .. rubric:: Un type itérable
 
@@ -130,44 +135,47 @@ Tableau de tableaux
 
 Un tableau peut contenir des tableaux ! On parle alors de tableaux à 2 dimensions.
 
-.. admonition:: Exemple
+Par exemple, une grille de jeu peut se représenter par un tableau à 2 dimensions:
 
-   Une grille de jeu peut se représenter par un tableau à 2 dimensions:
+.. code::
 
-   .. code::
+   grille = [
+      [0,0,0],    # première ligne
+      [0,0,0],    # seconde ligne
+      [0,1,0]     # troisième ligne
+   ]
 
-      grille = [
-         [0,0,0],    # première ligne
-         [0,0,0],    # seconde ligne
-         [0,1,0]     # troisième ligne
-      ]
+.. admonition:: Propriété
+   :class: propriete
 
-Pour accéder à une valeur de ce tableau, on utilise un premier indice pour sélectionner le tableau où se trouve la
-valeur puis un second indice pour obtenir la valeur dans le tableau sélectionné. Les indices sont notés entre crochets.
+   L'accès à une valeur d'un tableau de tableaux se fait avec 2 indices:
+   
+   -  un premier indice pour accéder au tableau où se trouve la valeur;
+   -  un second indice pour obtenir la valeur dans le tableau sélectionné. 
+   
+   Les indices sont notés entre crochets.
 
-.. admonition:: Exemple
+Soit un tableau T contenant les tableaux [4,5],[6,7] et [8,9].
 
-   Soit un tableau T contenant les tableaux [4,5],[6,7] et [8,9].
+En python, avec les listes, on a ``T=[[4,5],[6,7],[8,9]]``. On peut remarquer:
 
-   En python, avec les listes, on a ``T=[[4,5],[6,7],[8,9]]``. On peut remarquer:
-
-   -  que le tableau T contient 3 tableaux de dimension 2 ; T est un tableau de longueur 3;
-   -  que le tableau [4,5] a pour indice 0, le tableau [6,7] a pour indice 1 et le tableau [8,9] a pour indice 2 ;
-   -  que les valeurs ont pour indice 0 et 1 pour chacun des trois tableaux de longueur 2.
+-  que le tableau T contient 3 tableaux de dimension 2 ; T est un tableau de longueur 3;
+-  que le tableau [4,5] a pour indice 0, le tableau [6,7] a pour indice 1 et le tableau [8,9] a pour indice 2 ;
+-  que les valeurs ont pour indice 0 et 1 pour chacun des trois tableaux de longueur 2.
 
 .. code:: python
 
    # Liste contenant 3 listes
-   >>> T=[[1,2,3,4],[5,6,7],[8,9]]
+   >>> T=[[4,5],[6,7],[8,9]]
 
    >>> len(T)
    3 # --> renvoie la valeur 3 car T contient 3 listes
    
    >>> len(T[0])
-   4 # --> renvoie 4 car la première liste a pour longueur 4  T[0]=[1,2,3,4]
+   2 # --> T[0] est la première liste qui a pour longueur 2 : T[0]=[4,5]
 
    >>> T[-1]
    [8,9] # renvoie la liste [8,9] qui est le dernier élément du tableau T
 
-   >>> T[0][2]
-   3 # renvoie le nombre 3 car T[0] est la liste [1,2,3,4] et que l'élément d'indice 2 est 3.
+   >>> T[1][0]
+   6 # renvoie le nombre 6 car T[1] est la liste [6,7] et que l'élément d'indice 0 est 6.
