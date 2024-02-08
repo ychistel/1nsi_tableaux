@@ -47,7 +47,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Exercices" href="exercice.html" />
-    <link rel="prev" title="Données structurées : tableaux" href="tetris.html" />
+    <link rel="prev" title="Grille de jeu « Tétris »" href="tetris.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
   </head>
@@ -149,7 +149,7 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tetris.html">Données structurées : tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tetris.html">Grille de jeu « Tétris »</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Les tableaux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercice.html">Exercices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tp_tableau_par_comprehension.html">Créer des listes en Python</a></li>
@@ -355,7 +355,11 @@ Un <strong>tuple</strong> se note entre <strong>parenthèses</strong> et contien
 </pre></div>
 </div>
 <p class="rubric">Dimension d’une liste ou d’un tuple</p>
-<p>La dimension d’un tableau créé avec une liste ou un tuple est donné avec la fonction <code class="docutils literal notranslate"><span class="pre">len</span></code>.</p>
+<div class="definition admonition">
+<p class="admonition-title">Définition</p>
+<p>La <strong>dimension</strong> d’un tableau est le nombre d’éléments qu’il contient.</p>
+</div>
+<p>En python, la dimension d’un tableau créé avec une liste ou un tuple est donné avec la fonction <code class="docutils literal notranslate"><span class="pre">len</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># jours de la semaine dans un tuple</span>
 <span class="n">jours</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">)</span>
 <span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
@@ -369,14 +373,15 @@ Un <strong>tuple</strong> se note entre <strong>parenthèses</strong> et contien
 <p class="rubric">Accéder à une valeur du tableau</p>
 <div class="propriete admonition">
 <p class="admonition-title">Propriétés</p>
-<p>Pour accéder à un élément du tableau (tuple ou liste), on utilise son indice (index en anglais) placé entre crochets juste après le nom de la variable.</p>
+<p>Chaque élément d’un tableau (tuple ou liste) est accessible par son indice (index en anglais), c’est à dire par la position qu’il occupe dans le tableau.</p>
 <ul class="simple">
-<li><p>Le premier élément d’un tableau est d’indice 0;</p></li>
-<li><p>Le deuxième élément d’un tableau a pour indice 1;</p></li>
-<li><p>Le dernier élément d’un tableau a pour indice la dimension du tableau - 1;</p></li>
-<li><p>On peut aussi accéder au dernier élément ave l’indice -1.</p></li>
+<li><p>Le premier élément d’un tableau est d’indice <code class="docutils literal notranslate"><span class="pre">0</span></code>;</p></li>
+<li><p>Le deuxième élément d’un tableau a pour indice <code class="docutils literal notranslate"><span class="pre">1</span></code>;</p></li>
+<li><p>Le dernier élément d’un tableau a pour indice la <code class="docutils literal notranslate"><span class="pre">dimension</span> <span class="pre">du</span> <span class="pre">tableau</span> <span class="pre">-</span> <span class="pre">1</span></code>;</p></li>
+<li><p>On peut aussi accéder au dernier élément avec l’indice <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p></li>
 </ul>
 </div>
+<p>En python, on accède à un élément du tableau en notant son indice entre crochets juste après le nom de la variable tableau.</p>
 <p>On reprend le tuple sur les jours de la semaine:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># jours de la semaine dans un tuple</span>
 <span class="n">jours</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">)</span>
@@ -394,29 +399,30 @@ Un <strong>tuple</strong> se note entre <strong>parenthèses</strong> et contien
 </pre></div>
 </div>
 <p class="rubric">Un type itérable</p>
-<p>On peut parcourir les éléments d’une liste et donc récupérer ses valeurs en <strong>itérant</strong> cette liste avec une boucle.</p>
-<ol class="arabic">
-<li><p>Avec une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> qui utilise les indices de chaque élément de la liste:</p>
+<div class="definition admonition">
+<p class="admonition-title">Définition</p>
+<p>Un type est itérable lorsqu’on peu accéder à chacune de ses valeurs.</p>
+<p>Les <strong>listes</strong> et les <strong>tuples</strong> python sont itérables.</p>
+</div>
+<p>On peut parcourir les éléments d’une liste et donc récupérer ses valeurs en <strong>itérant</strong> cette liste avec une <strong>boucle</strong>.</p>
+<p>Par exemple, avec une boucle qui utilise les <strong>indices</strong> de chaque élément de la liste:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># On définit une liste jours</span>
 <span class="n">jours</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">]</span>
 
 <span class="c1"># boucle for qui itère sur les 7 indices, de 0 à 6, soit un range(7)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">jours</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">jours</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
-</li>
-<li><p>Avec une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> et le mot clé <code class="docutils literal notranslate"><span class="pre">in</span></code>:</p>
+<p>Un autre exemple, avec une boucle qui <strong>accède directement</strong> à chaque valeur du tableau:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># On définit une liste jours</span>
 <span class="n">jours</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span><span class="s2">&quot;dimanche&quot;</span><span class="p">]</span>
 
 <span class="c1"># boucle for qui itère sur sur chaque élément de la liste</span>
 <span class="k">for</span> <span class="n">jour</span> <span class="ow">in</span> <span class="n">jours</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">jour</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">jour</span><span class="p">)</span>
 </pre></div>
 </div>
-</li>
-</ol>
 <p class="rubric">Modifier une valeur de la liste</p>
 <p>La modification d’une valeur d’une liste est possible. Pour cela, on procède à une nouvelle affectation sur l’élément de la liste en précisant son indice et la nouvelle valeur.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># on définit la variable jours de type liste:</span>
@@ -429,7 +435,11 @@ Un <strong>tuple</strong> se note entre <strong>parenthèses</strong> et contien
 </section>
 <section id="tableau-de-tableaux">
 <h2>Tableau de tableaux<a class="headerlink" href="#tableau-de-tableaux" title="Link to this heading">#</a></h2>
-<p>Un tableau peut contenir des tableaux ! On parle alors de tableaux à 2 dimensions.</p>
+<div class="definition admonition">
+<p class="admonition-title">Définition</p>
+<p>Un tableau dont chaque élément est un tableau est appelé <strong>tableau à 2 dimensions</strong>.</p>
+<p>La dimension (longueur) du tableau est donnée par le nombre de tableaux qu’il contient.</p>
+</div>
 <p>Par exemple, une grille de jeu peut se représenter par un tableau à 2 dimensions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grille</span> <span class="o">=</span> <span class="p">[</span>
    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>    <span class="c1"># première ligne</span>
@@ -490,7 +500,7 @@ Un <strong>tuple</strong> se note entre <strong>parenthèses</strong> et contien
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">précédent</p>
-        <p class="prev-next-title">Données structurées : tableaux</p>
+        <p class="prev-next-title">Grille de jeu « Tétris »</p>
       </div>
     </a>
     <a class="right-next"
