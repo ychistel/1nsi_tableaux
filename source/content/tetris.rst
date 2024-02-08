@@ -1,5 +1,5 @@
-Données structurées : tableaux
-==============================
+Grille de jeu "Tétris" 
+======================
 
 Tout le monde connaît le jeu **tétris** qui consiste à empiler des formes sans sortir du cadre défini par le jeu.
 

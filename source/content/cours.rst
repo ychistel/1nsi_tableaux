@@ -49,7 +49,12 @@ En python, la structure de données **tableau** n'existe pas. On construit des t
 
 .. rubric:: Dimension d'une liste ou d'un tuple
 
-La dimension d'un tableau créé avec une liste ou un tuple est donné avec la fonction ``len``.
+.. admonition:: Définition
+   :class: definition
+
+   La **dimension** d'un tableau est le nombre d'éléments qu'il contient.
+
+En python, la dimension d'un tableau créé avec une liste ou un tuple est donné avec la fonction ``len``.
 
 .. code:: python
 
@@ -67,12 +72,14 @@ La dimension d'un tableau créé avec une liste ou un tuple est donné avec la f
 .. admonition:: Propriétés
    :class: propriete
       
-   Pour accéder à un élément du tableau (tuple ou liste), on utilise son indice (index en anglais) placé entre crochets juste après le nom de la variable.
+   Chaque élément d'un tableau (tuple ou liste) est accessible par son indice (index en anglais), c'est à dire par la position qu'il occupe dans le tableau.
+   
+   - Le premier élément d'un tableau est d'indice ``0``;
+   - Le deuxième élément d'un tableau a pour indice ``1``;
+   - Le dernier élément d'un tableau a pour indice la ``dimension du tableau - 1``;
+   - On peut aussi accéder au dernier élément avec l'indice ``-1``.
 
-   - Le premier élément d'un tableau est d'indice 0;
-   - Le deuxième élément d'un tableau a pour indice 1;
-   - Le dernier élément d'un tableau a pour indice la dimension du tableau - 1;
-   - On peut aussi accéder au dernier élément ave l'indice -1.
+En python, on accède à un élément du tableau en notant son indice entre crochets juste après le nom de la variable tableau.
 
 On reprend le tuple sur les jours de la semaine:
 
@@ -94,29 +101,36 @@ On reprend le tuple sur les jours de la semaine:
 
 .. rubric:: Un type itérable
 
-On peut parcourir les éléments d'une liste et donc récupérer ses valeurs en **itérant** cette liste avec une boucle.
+.. admonition:: Définition
+   :class: definition
 
-#. Avec une boucle ``for`` qui utilise les indices de chaque élément de la liste:
+   Un type est itérable lorsqu'on peu accéder à chacune de ses valeurs. 
+   
+   Les **listes** et les **tuples** python sont itérables.
 
-   .. code:: python
+On peut parcourir les éléments d'une liste et donc récupérer ses valeurs en **itérant** cette liste avec une **boucle**.
 
-      # On définit une liste jours
-      jours = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
+Par exemple, avec une boucle qui utilise les **indices** de chaque élément de la liste:
 
-      # boucle for qui itère sur les 7 indices, de 0 à 6, soit un range(7)
-      for i in range(7):
-          print(jours[i])
-          
-#. Avec une boucle ``for`` et le mot clé ``in``:
+.. code:: python
 
-   .. code:: python
+   # On définit une liste jours
+   jours = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
 
-      # On définit une liste jours
-      jours = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
+   # boucle for qui itère sur les 7 indices, de 0 à 6, soit un range(7)
+   for i in range(7):
+         print(jours[i])
+         
+Un autre exemple, avec une boucle qui **accède directement** à chaque valeur du tableau:
 
-      # boucle for qui itère sur sur chaque élément de la liste
-      for jour in jours:
-          print(jour)
+.. code:: python
+
+   # On définit une liste jours
+   jours = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
+
+   # boucle for qui itère sur sur chaque élément de la liste
+   for jour in jours:
+         print(jour)
 
 .. rubric:: Modifier une valeur de la liste
 
@@ -133,7 +147,12 @@ La modification d'une valeur d'une liste est possible. Pour cela, on procède à
 Tableau de tableaux
 -------------------
 
-Un tableau peut contenir des tableaux ! On parle alors de tableaux à 2 dimensions.
+.. admonition:: Définition
+   :class: definition
+
+   Un tableau dont chaque élément est un tableau est appelé **tableau à 2 dimensions**. 
+   
+   La dimension (longueur) du tableau est donnée par le nombre de tableaux qu'il contient.
 
 Par exemple, une grille de jeu peut se représenter par un tableau à 2 dimensions:
 
