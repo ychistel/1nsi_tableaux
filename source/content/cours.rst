@@ -42,10 +42,9 @@ En python, la structure de données **tableau** n'existe pas. On construit des t
    Cela siginie que sa dimension est fixe, qu'on ne peut pas modifier ses valeurs, ni en supprimer, ni en ajouter.
    Un **tuple** se note entre **parenthèses** et contient les valeurs séparées par des virgules.
 
-.. code:: python
+On définit la variable ``jours`` qui contient les jours de la semaine dans un tuple
 
-   # jours de la semaine dans un tuple
-   jours = ("lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche")
+>>> jours = ("lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche")
 
 .. rubric:: Dimension d'une liste ou d'un tuple
 
@@ -56,23 +55,24 @@ En python, la structure de données **tableau** n'existe pas. On construit des t
 
 En python, la dimension d'un tableau créé avec une liste ou un tuple est donné avec la fonction ``len``.
 
-.. code:: python
+On reprend la variable ``jours`` de type **tuple** qui contient les 7 jours de la semaine
 
-   # jours de la semaine dans un tuple
-   jours = ("lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche")
-   notes = [5,14,11,16]
+>>> jours = ("lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche")
+>>> len(jours)
+7
 
-   >>> len(jours)
-   7
-   >>> len(notes)
-   4
+Dans un autre exemple, on définit la variable ``notes`` qui contient des valeurs entières
+
+>>> notes = [5,14,11,16]
+>>> len(notes)
+4
 
 .. rubric:: Accéder à une valeur du tableau
 
 .. admonition:: Propriétés
    :class: propriete
       
-   Chaque élément d'un tableau (tuple ou liste) est accessible par son indice (index en anglais), c'est à dire par la position qu'il occupe dans le tableau.
+   Chaque élément d'un tableau (tuple ou liste) est accessible par son **indice** (index en anglais), c'est à dire par la position qu'il occupe dans le tableau.
    
    - Le premier élément d'un tableau est d'indice ``0``;
    - Le deuxième élément d'un tableau a pour indice ``1``;
@@ -81,23 +81,19 @@ En python, la dimension d'un tableau créé avec une liste ou un tuple est donn�
 
 En python, on accède à un élément du tableau en notant son indice entre crochets juste après le nom de la variable tableau.
 
-On reprend le tuple sur les jours de la semaine:
+On reprend le tuple ``jours`` qui contient les jours de la semaine. On peut accéder à chaque jour de la semaine avec les indices:
 
-.. code:: python
-
-   # jours de la semaine dans un tuple
-   jours = ("lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche")
-
-   >>> jours[0]
-   "lundi"
-   >>> jours[1]
-   "mardi"
-   >>> jours[6]
-   "dimanche"
-   >>> jours[-1]
-   "dimanche"
-   >>> jours[-2]
-   "samedi"
+>>> jours = ("lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche")
+>>> jours[0]
+"lundi"
+>>> jours[1]
+"mardi"
+>>> jours[6]
+"dimanche"
+>>> jours[-1]
+"dimanche"
+>>> jours[-2]
+"samedi"
 
 .. rubric:: Un type itérable
 
@@ -108,41 +104,49 @@ On reprend le tuple sur les jours de la semaine:
    
    Les **listes** et les **tuples** python sont itérables.
 
-On peut parcourir les éléments d'une liste et donc récupérer ses valeurs en **itérant** cette liste avec une **boucle**.
+On peut parcourir les éléments d'une liste et donc récupérer ses valeurs en **itérant** cette liste avec une **boucle**. Par exemple, avec une boucle qui utilise les **indices** de chaque élément de la liste:
 
-Par exemple, avec une boucle qui utilise les **indices** de chaque élément de la liste:
+On reprend le tuple ``jours``:
 
-.. code:: python
+>>> jours = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
 
-   # On définit une liste jours
-   jours = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
-
-   # boucle for qui itère sur les 7 indices, de 0 à 6, soit un range(7)
-   for i in range(7):
-         print(jours[i])
+On crée une boucle ``for`` qui itère sur les 7 indices, de 0 à 6, c'est à dire avec un range(7)
+   
+>>> for i in range(7):
+        print(jours[i])
+"lundi"
+"mardi"
+"mercredi"
+"jeudi"
+"vendredi"
+"samedi"
+"dimanche"
          
-Un autre exemple, avec une boucle qui **accède directement** à chaque valeur du tableau:
+Donnons un autre exemple, avec une boucle qui **accède directement** à chaque valeur du tableau
 
-.. code:: python
-
-   # On définit une liste jours
-   jours = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
-
-   # boucle for qui itère sur sur chaque élément de la liste
-   for jour in jours:
-         print(jour)
+>>> for jour in jours:
+        print(jour)
+"lundi"
+"mardi"
+"mercredi"
+"jeudi"
+"vendredi"
+"samedi"
+"dimanche"
 
 .. rubric:: Modifier une valeur de la liste
 
 La modification d'une valeur d'une liste est possible. Pour cela, on procède à une nouvelle affectation sur l'élément de la liste en précisant son indice et la nouvelle valeur.
 
-.. code:: python
+On définit la variable ``jours`` de type liste
 
-   # on définit la variable jours de type liste:
-   jours = ["lundi","mardi","mercredi","jedi","vendredi","samedi","dimanche"]
+>>> jours = ["lundi","mardi","mercredi","jedi","vendredi","samedi","dimanche"]
 
-   # zut il manque un "u" à jeudi qui a pour indice 3 ! On modifie :
-   jours[3] = "jeudi"
+On remarque une erreur, il manque un "u" à jeudi qui a pour indice 3 ! On corrige l'erreur :
+   
+>>> jours[3] = "jeudi"
+>>> jours
+["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
 
 Tableau de tableaux
 -------------------
@@ -182,19 +186,23 @@ En python, avec les listes, on a ``T=[[4,5],[6,7],[8,9]]``. On peut remarquer:
 -  que le tableau [4,5] a pour indice 0, le tableau [6,7] a pour indice 1 et le tableau [8,9] a pour indice 2 ;
 -  que les valeurs ont pour indice 0 et 1 pour chacun des trois tableaux de longueur 2.
 
-.. code:: python
+On crée une liste ``T`` qui contient 3 listes. La liste ``T`` est de longueur 3.
 
-   # Liste contenant 3 listes
-   >>> T=[[4,5],[6,7],[8,9]]
+>>> T=[[4,5],[6,7],[8,9]]
+>>> len(T)
+3
 
-   >>> len(T)
-   3 # --> renvoie la valeur 3 car T contient 3 listes
+On peut aussi récupérer la longueur de la première liste de la variable ``T``
+
+>>> len(T[0])
+2
+
+On peut accéder à la dernière liste contenue dans la variable ``T`` avec l'indice ``-1``
    
-   >>> len(T[0])
-   2 # --> T[0] est la première liste qui a pour longueur 2 : T[0]=[4,5]
+>>> T[-1]
+[8,9]
 
-   >>> T[-1]
-   [8,9] # renvoie la liste [8,9] qui est le dernier élément du tableau T
-
-   >>> T[1][0]
-   6 # renvoie le nombre 6 car T[1] est la liste [6,7] et que l'élément d'indice 0 est 6.
+On accède via les indices à la première valeur du tableau situé au milieu de ``T``
+   
+>>> T[1][0]
+6
